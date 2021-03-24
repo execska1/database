@@ -16,7 +16,7 @@ public class RadioCharts {
     public String getMostPlayedSong() {
         return execute("SELECT song FROM music_broadcast " +
                 "GROUP BY song " +
-                "ORDER BY SUM(times_aired) DESC LIMIT 1;");
+                "ORDER BY SUM(times_aired) DESC, artist ASC LIMIT 1;");
     }
 
     public String getMostActiveArtist() {
